@@ -1,0 +1,36 @@
+{% extends 'posts/base.html' %}
+
+{% block title %}Register | {{ block.super }}{% endblock title %}
+
+{% block style %}
+    <style>
+
+    .form-login {
+        border: gainsboro solid 1px;
+        border-radius: 5px;
+        background-color: #f2f2f2;
+        padding: 30px;
+    }
+
+    </style>
+{% endblock style %}
+
+{% block content %}
+    <br>
+    <h2 class="text-center">Register</h2>
+    <hr class="col-md-6">
+
+    <div class="col-md-6 offset-md-3">
+
+    <form class="form-login" method="post">
+        {% csrf_token %}
+
+        {{ form.as_p }}
+
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+
+
+    </div>
+
+{% endblock content %}
